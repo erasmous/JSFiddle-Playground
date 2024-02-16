@@ -16,28 +16,36 @@
             overflow: auto;
             white-space: pre-wrap;
         }
+
+        /* Custom CSS for resizable iframe */
+        #resizableIframe {
+            resize: both;
+            overflow: auto;
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 h-screen">
     <header class="bg-gray-800 text-white py-4">
-        <h1 class="text-center text-2xl">My JSFiddle UI with Tailwind CSS</h1>
-    </header>
-    <main class="grid grid-cols-1 md:grid-cols-2 gap-8 container mx-auto my-8 px-4 h-full">
-        <div class="h-full">
-            <textarea id="code"
-                class="w-full h-full bg-gray-900 text-white rounded-md border border-gray-600 px-4 py-2 mb-4 resize-none"
-                placeholder="Enter your HTML, CSS, or JavaScript code here..."></textarea>
-            <div class="flex justify-center space-x-4">
+        <div class="container mx-auto">
+            <h1 class="text-center text-2xl">My JSFiddle UI with Tailwind CSS</h1>
+            <div class="flex justify-center space-x-4 mt-4">
                 <button id="runButton"
                     class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Run</button>
                 <button id="resetButton"
                     class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded">Reset</button>
             </div>
         </div>
+    </header>
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-8 container mx-auto my-8 px-4 h-auto">
         <div class="h-full">
-            <iframe id="resultFrame" class="w-full h-full border border-gray-300 mt-4"
-                style="min-height: 300px;"></iframe>
+            <textarea id="code"
+                class="w-full h-screen bg-gray-900 text-white rounded-md border border-gray-600 px-4 py-2 mb-4 resize-none"
+                placeholder="Enter your HTML, CSS, or JavaScript code here..."></textarea>
+        </div>
+        <div class="h-screen">
+            <iframe id="resultFrame" class="w-full h-screen border border-gray-300" style="min-height: 300px;"
+                id="resizableIframe"></iframe>
         </div>
     </main>
     <script src="script.js"></script>
